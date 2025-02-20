@@ -1,0 +1,25 @@
+{
+  "name": "plotly-js-bindings",
+  "module": "src/index.ts",
+  "scripts": {
+    "build": "esbuild --bundle --alias:plotly.js=plotly.js/dist/plotly --format=esm --minify --outfile=dist/plotlywidget.js src/index.ts",
+    "watch": "npm run build -- --watch --sourcemap=inline",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "esbuild": "^0.25.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@anywidget/types": "^0.2.0",
+    "@types/plotly.js": "^2.35.2",
+    "assert": "^2.1.0",
+    "buffer": "^6.0.3",
+    "plotly.js": "^3.0.1",
+    "stream": "^0.0.3"
+  }
+}
